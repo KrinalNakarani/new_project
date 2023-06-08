@@ -10,9 +10,18 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+  int a1 = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     ApiModel n1 = ModalRoute.of(context)!.settings.arguments as ApiModel;
+    ApiModel m1 = ModalRoute.of(context)!.settings.arguments as ApiModel;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -37,7 +46,7 @@ class _SecondPageState extends State<SecondPage> {
                   criticalPerOneMillion: n1.criticalPerOneMillion,
                 );
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.bookmark_border,
               ),
             )
@@ -47,17 +56,20 @@ class _SecondPageState extends State<SecondPage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 CircleAvatar(
                   radius: 60,
                   backgroundImage: NetworkImage("${n1.countryInfo!.flag}"),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
-                  "Country Name = ${n1.country}",
+                  "Country Name = ${(a1 == 0) ? n1.country : m1.country}",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
@@ -65,103 +77,103 @@ class _SecondPageState extends State<SecondPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "Cases = ${n1.cases}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "Cases = ${(a1 == 0) ? n1.cases : m1.cases}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "active = ${n1.active}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "active = ${(a1 == 0) ? n1.active : m1.active}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "critical = ${n1.critical}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "critical = ${(a1 == 0) ? n1.critical : m1.critical}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "casesPerOneMillion = ${n1.casesPerOneMillion}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "casesPerOneMillion = ${(a1 == 0) ? n1.casesPerOneMillion : m1.casesPerOneMillion}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "tests = ${n1.tests}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "tests = ${(a1 == 0) ? n1.tests : m1.tests}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "testsPerOneMillion = ${n1.testsPerOneMillion}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "testsPerOneMillion = ${(a1 == 0) ? n1.testsPerOneMillion : m1.testsPerOneMillion}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "population = ${n1.population}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "population = ${(a1 == 0) ? n1.population : m1.population}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "continent = ${n1.continent}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "continent = ${(a1 == 0) ? n1.continent : m1.continent}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "oneCasePerPeople = ${n1.oneCasePerPeople}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "oneCasePerPeople = ${(a1 == 0) ? n1.oneCasePerPeople : m1.oneCasePerPeople}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "oneDeathPerPeople = ${n1.oneDeathPerPeople}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "oneDeathPerPeople = ${(a1 == 0) ? n1.oneDeathPerPeople : m1.oneDeathPerPeople}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "oneTestPerPeople = ${n1.oneTestPerPeople}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "oneTestPerPeople = ${(a1 == 0) ? n1.oneTestPerPeople : m1.oneTestPerPeople}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "activePerOneMillion = ${n1.activePerOneMillion}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "activePerOneMillion = ${(a1 == 0) ? n1.activePerOneMillion : m1.activePerOneMillion}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "recoveredPerOneMillion = ${n1.recoveredPerOneMillion}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "recoveredPerOneMillion = ${(a1 == 0) ? n1.recoveredPerOneMillion : m1.recoveredPerOneMillion}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              "criticalPerOneMillion = ${n1.criticalPerOneMillion}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              "criticalPerOneMillion = ${(a1 == 0) ? n1.criticalPerOneMillion : m1.criticalPerOneMillion}",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ],
         ),
@@ -169,3 +181,8 @@ class _SecondPageState extends State<SecondPage> {
     );
   }
 }
+/*
+n1=0?n1:n2
+
+
+*/

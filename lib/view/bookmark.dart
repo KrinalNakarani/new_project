@@ -41,8 +41,9 @@ class _BookMarkPageState extends State<BookMarkPage> {
                   height: 10,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/');
+                  onTap: () {
+                    Navigator.pushNamed(context, '/second',
+                        arguments: {'status': 1, 'list': l1[index]});
                   },
                   child: Container(
                     height: 100,

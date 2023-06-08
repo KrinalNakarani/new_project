@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.green.shade500,
           actions: [
             IconButton(
               onPressed: () {
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap: () {
                           Navigator.pushNamed(context, '/second',
-                              arguments: l1[index]);
+                              arguments: {'status': 0, 'list': l1[index]});
                           print('${l1[index].country}');
                         },
                         child: Container(
